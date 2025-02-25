@@ -1,0 +1,16 @@
+class ASum
+{
+  public:
+  static long long findNb(long long m) {
+    long long cube = 0;
+    long long sum = 0;
+    
+    while(sum < m) {
+      sum += (cube * cube * cube);
+      cube++;
+    }
+    
+    return (sum == m) ? cube - 1 : -1; 
+  }
+};
+​
