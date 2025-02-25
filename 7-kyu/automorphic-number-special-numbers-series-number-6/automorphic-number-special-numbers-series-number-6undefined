@@ -1,0 +1,30 @@
+#include <string>
+​
+std::string autoMorphic(int number)
+{
+  long long res = (long long) number * number;  
+  int num = number;
+  int digit = (number == 0) ? 1 : 0;
+  
+  if(number < 0) {
+    return "Not!!";
+  }
+  
+  while(num > 0) {
+    num /= 10;
+    digit++;
+  }
+  
+  for(int i = 0; i < digit; i++) {
+    if(res % 10 != number % 10) {
+      return "Not!!";
+    }
+    
+    res /= 10;
+    number /= 10;
+    
+  }
+  
+  
+  return "Automorphic";
+}
