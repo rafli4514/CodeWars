@@ -1,0 +1,31 @@
+#include <cmath>
+​
+long long f1(long long int x, long long int sq) {
+    return x * x - sq;
+}
+​
+long long f2(long long int x) {
+    return 2 * x;
+}
+​
+long long power(long long int x) {
+    return (x + 1) * (x + 1);
+}
+​
+long long int findNextSquare(long long int sq) {
+    if (sq < 0) return -1; 
+    
+    long long int nextSquare = std::sqrt(sq); 
+​
+    for (int i = 0; i < 10; i++) { 
+        nextSquare = nextSquare - (f1(nextSquare, sq) / f2(nextSquare));
+​
+        if (nextSquare * nextSquare == sq) {
+            return power(nextSquare);
+        }
+    }
+​
+    return -1;
+}
+​
+​
