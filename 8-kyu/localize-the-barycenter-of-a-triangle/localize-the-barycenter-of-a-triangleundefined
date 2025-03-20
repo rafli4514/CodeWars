@@ -1,0 +1,14 @@
+#include <utility>
+#include <cmath>
+​
+using point = const std::pair<double, double>;
+​
+std::pair<double, double> barTriang(point p1, point p2, point p3) {
+    double x0 = (p1.first + p2.first + p3.first) / 3;
+    double y0 = (p1.second + p2.second + p3.second) / 3;
+    
+    x0 = std::round(x0 * 10000) / 10000;
+    y0 = std::round(y0 * 10000) / 10000;
+​
+    return {x0, y0};
+}
